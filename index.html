@@ -11,8 +11,7 @@
     <meta name="author" content="William | UU Design">
     <meta name="robots" content="index, follow">
 
-    <!-- FAVICON -->
-    <!-- UPDATED: Using the existing logo as the site icon -->
+    <!-- FAVICON (Uses your logo) -->
     <link rel="icon" type="image/png" href="images/logo.png">
     
     <!-- Open Graph / LinkedIn / Facebook -->
@@ -77,21 +76,50 @@
     <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-lightBg/80 dark:bg-darkBg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div class="structure-container h-24 flex justify-between items-center">
-            <!-- UPDATED: Replaced Text with Logo Image -->
-            <a href="#" class="block hover:opacity-80 transition-opacity">
-                <!-- 
-                     Logic:
-                     h-10: Sets a good height for the nav.
-                     w-auto: Maintains aspect ratio.
-                     dark:invert: If the logo is black, this flips it to white in dark mode automatically.
-                -->
+            <!-- Logo -->
+            <a href="#" class="block hover:opacity-80 transition-opacity z-50 relative">
                 <img src="images/logo.png" alt="UU Design Logo" class="h-8 w-auto dark:invert">
             </a>
             
+            <!-- Desktop Menu -->
             <div class="hidden md:flex gap-8 font-mono text-sm">
                 <a href="#about" class="hover:text-accent transition-colors">ABOUT</a>
                 <a href="#portfolio" class="hover:text-accent transition-colors">PORTFOLIO</a>
                 <a href="#timeline" class="hover:text-accent transition-colors">ROADMAP</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden z-50 p-2 text-lightText dark:text-darkText focus:outline-none">
+                <!-- Icon: Menu -->
+                <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Icon: Close -->
+                <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-lightBg/95 dark:bg-darkBg/95 backdrop-blur-xl z-40 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
+            <div class="flex flex-col gap-12 text-center font-sans font-bold text-3xl tracking-tight">
+                <a href="#about" class="mobile-link hover:text-accent transition-colors">ABOUT</a>
+                <a href="#portfolio" class="mobile-link hover:text-accent transition-colors">PORTFOLIO</a>
+                <a href="#timeline" class="mobile-link hover:text-accent transition-colors">ROADMAP</a>
+            </div>
+            
+            <!-- Mobile Footer Info -->
+            <div class="absolute bottom-12 text-center">
+                <p class="font-mono text-xs text-gray-500 mb-4">SYSTEM STATUS: ONLINE</p>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.instagram.com/uudesign.co/" target="_blank" class="text-gray-400 hover:text-accent">
+                        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="mailto:williamstosik@icloud.com" class="text-gray-400 hover:text-accent">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -262,8 +290,8 @@
                                 <div class="flex items-center gap-4">
                                     <span class="w-24">Figma / Web</span>
                                     <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[80%]"></div></div>
+                                </div>
                             </div>
-                        </div>
 
                             <!-- Sound -->
                             <div>
@@ -367,15 +395,17 @@
                 
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Image 1: Web UX -->
-                    <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
-                        <img src="images/studio-web.jpg" alt="Studio Resonance Website" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Web Architecture & UX</span>
+                    <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent cursor-pointer">
+                        <img src="images/studio-web.jpg" alt="Studio Resonance Website" class="zoomable absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2 flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" /></svg>
+                                CLICK TO INSPECT
+                            </span>
                         </div>
                     </div>
 
                     <!-- Image 2: Educational Content (ZOOMABLE) -->
-                    <!-- Added 'zoomable' class to this specific image -->
                     <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent cursor-pointer">
                         <img src="images/studio-content.jpg" alt="Studio Resonance Educational Content" class="zoomable absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">

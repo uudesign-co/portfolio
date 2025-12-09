@@ -110,36 +110,84 @@ function animate() {
 animate();
 
 // ==========================================
-// BLUEPRINT MODAL LOGIC (New Addition)
+// BLUEPRINT MODAL LOGIC 
 // ==========================================
 const modal = document.getElementById('blueprint-modal');
 const modalImg = document.getElementById('modal-img');
 const closeBtn = document.getElementById('modal-close');
 const triggers = document.querySelectorAll('.zoomable');
 
-// Open Modal
-triggers.forEach(img => {
-    img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        // Apply rotation class to flip it vertical
-        modalImg.classList.add('rotate-vertical');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
+if (triggers.length > 0) {
+    triggers.forEach(img => {
+        img.addEventListener('click', () => {
+            modalImg.src = img.src;
+            modalImg.classList.add('rotate-vertical');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        });
     });
-});
 
-// Close Modal Function
-const closeModal = () => {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    modalImg.src = ''; // Clear source
-};
+    const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        modalImg.src = '';
+    };
 
-// Close Triggers
-closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', closeModal); // Close on background click
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
-    }
-});
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+}
+
+// ==========================================
+// MOBILE MENU LOGIC
+// ==========================================
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const iconMenu = document.getElementById('icon-menu');
+const iconClose = document.getElementById('icon-close');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0');
+                mobileMenu.classList.add('flex', 'opacity-100');
+            }, 10);
+            iconMenu.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }, 300);
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }, 300);
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
