@@ -10,12 +10,17 @@ let width, height;
 let particles = [];
 
 // === Configuration ===
-const moveSpeed = 0.5;
+const moveSpeed = 0.4; // Slightly slower for better readability
 const extensions = [
     '.WAV', '.MP3', '.AI', '.PSD', '.AE', 
     '.SVG', '.PNG', '.JPG', '.PDF', '.MP4', '.MOV',
     '.HTML', '.CSS', '.JS'
 ];
+
+// Determine particle count based on screen width to avoid crowding
+const getParticleCount = () => {
+    return window.innerWidth < 768 ? 6 : 12;
+};
 
 // Wave Config (The "Audio" Signal)
 const waves = [
@@ -28,29 +33,43 @@ const waves = [
 function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    initParticles(); // Re-distribute on resize
 }
 window.addEventListener('resize', resize);
-resize();
 
-// === Text Particle Class ===
+
+// === Text Particle Class (DISTRIBUTED SYSTEM) ===
 class TextParticle {
-    constructor() {
-        this.reset();
-        this.x = Math.random() * width; 
+    constructor(index, totalParticles) {
+        this.index = index;
+        // Evenly space them out across the screen width
+        this.x = (width / totalParticles) * index;
+        
+        // Assign a UNIQUE extension based on index (No duplicates on screen)
+        this.text = extensions[index % extensions.length];
+        
+        this.resetParams();
     }
 
-    reset() {
-        this.x = -50; 
-        this.text = extensions[Math.floor(Math.random() * extensions.length)];
+    resetParams() {
+        // Randomize wave layer and vertical offset
         this.waveIndex = Math.floor(Math.random() * waves.length);
-        this.offsetY = (Math.random() - 0.5) * 40; 
-        this.speed = moveSpeed + (Math.random() * 0.2);
-        this.opacity = 0.1 + (Math.random() * 0.3); 
+        this.offsetY = (Math.random() - 0.5) * 50; 
+        
+        // Low speed variance to keep them from bunching up too quickly
+        this.speed = moveSpeed + (Math.random() * 0.1);
+        this.opacity = 0.2 + (Math.random() * 0.3); 
     }
 
     update() {
         this.x += this.speed;
-        if (this.x > width + 50) this.reset();
+
+        // If it goes off screen right, wrap around to the left
+        if (this.x > width + 50) {
+            this.x = -50;
+            // We do NOT change the text here, ensuring uniqueness remains
+            this.resetParams();
+        }
     }
 
     draw(isDark, time) {
@@ -67,9 +86,16 @@ class TextParticle {
 }
 
 // === Initialize Particles ===
-for (let i = 0; i < 20; i++) {
-    particles.push(new TextParticle());
+function initParticles() {
+    particles = [];
+    const count = getParticleCount();
+    for (let i = 0; i < count; i++) {
+        particles.push(new TextParticle(i, count));
+    }
 }
+
+// Initial setup
+resize(); 
 
 // === Draw Wave Function ===
 function drawWaves(isDark, time) {
@@ -133,10 +159,10 @@ if (triggers.length > 0) {
         modalImg.src = '';
     };
 
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
             closeModal();
         }
     });
@@ -153,41 +179,60 @@ const mobileLinks = document.querySelectorAll('.mobile-link');
 
 if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
+        const isClosed = mobileMenu.classList.contains('hidden');
         
-        if (isHidden) {
+        if (isClosed) {
+            // OPEN
             mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            
+            // Small delay to allow display:flex to apply
             setTimeout(() => {
                 mobileMenu.classList.remove('opacity-0');
-                mobileMenu.classList.add('flex', 'opacity-100');
+                mobileMenu.classList.add('opacity-100');
             }, 10);
+            
+            // Swap Icons
             iconMenu.classList.add('hidden');
             iconClose.classList.remove('hidden');
+            
+            // Lock Scroll
             document.body.style.overflow = 'hidden';
+            
         } else {
+            // CLOSE
             mobileMenu.classList.remove('opacity-100');
             mobileMenu.classList.add('opacity-0');
+            
+            // Wait for transition
             setTimeout(() => {
-                mobileMenu.classList.add('hidden');
                 mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
             }, 300);
+            
+            // Swap Icons
             iconMenu.classList.remove('hidden');
             iconClose.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            
+            // Unlock Scroll
+            document.body.style.overflow = '';
         }
     });
 
+    // Close on Link Click
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('opacity-100');
             mobileMenu.classList.add('opacity-0');
+            document.body.style.overflow = '';
+            
             setTimeout(() => {
-                mobileMenu.classList.add('hidden');
                 mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
             }, 300);
+            
             iconMenu.classList.remove('hidden');
             iconClose.classList.add('hidden');
-            document.body.style.overflow = 'auto';
         });
     });
 }
