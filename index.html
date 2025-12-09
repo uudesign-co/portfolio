@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & METADATA -->
+    <title>UU Design | Brand Systems & Creative Direction</title>
+    <meta name="description" content="UU Design is a multidisciplinary studio specializing in Brand Systems, Audio/Visual Design, and Creative Direction. Bridging the gap between auditory signal, visual structure, and business strategy.">
+    <meta name="keywords" content="Brand Design, Audio Recording, Creative Direction, Graphic Design, Web Design, UX/UI, System Design, Sound Design, Branding Strategy">
+    <meta name="author" content="William | UU Design">
+    <meta name="robots" content="index, follow">
+
+    <!-- FAVICON -->
+    <!-- UPDATED: Using the existing logo as the site icon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uudesign.co/">
+    <meta property="og:title" content="UU Design | Brand Systems & Creative Direction">
+    <meta property="og:description" content="Bridging the gap between auditory signal, visual structure, and business strategy.">
+    <meta property="og:image" content="images/heavyeight-identity.jpg"> 
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://uudesign.co/">
+    <meta property="twitter:title" content="UU Design | Brand Systems & Creative Direction">
+    <meta property="twitter:description" content="Bridging the gap between auditory signal, visual structure, and business strategy.">
+    <meta property="twitter:image" content="images/heavyeight-identity.jpg">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Space_Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media', 
+            theme: {
+                extend: {
+                    colors: {
+                        lightBg: '#F5F5F5',
+                        lightText: '#1E1E1E',
+                        darkBg: '#121212',
+                        darkText: '#F0F0F0',
+                        accent: '#00AEEF', // Electric Cyan
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    animation: {
+                        'glitch': 'glitch 1s linear infinite',
+                    },
+                    keyframes: {
+                        glitch: {
+                            '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                            '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                            '62%': { transform: 'translate(0,0) skew(5deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText transition-colors duration-300">
+
+    <!-- Dynamic Background Canvas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-lightBg/80 dark:bg-darkBg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="structure-container h-24 flex justify-between items-center">
+            <!-- UPDATED: Replaced Text with Logo Image -->
+            <a href="#" class="block hover:opacity-80 transition-opacity">
+                <!-- 
+                     Logic:
+                     h-10: Sets a good height for the nav.
+                     w-auto: Maintains aspect ratio.
+                     dark:invert: If the logo is black, this flips it to white in dark mode automatically.
+                -->
+                <img src="images/logo.png" alt="UU Design Logo" class="h-8 w-auto dark:invert">
+            </a>
+            
+            <div class="hidden md:flex gap-8 font-mono text-sm">
+                <a href="#about" class="hover:text-accent transition-colors">ABOUT</a>
+                <a href="#portfolio" class="hover:text-accent transition-colors">PORTFOLIO</a>
+                <a href="#timeline" class="hover:text-accent transition-colors">ROADMAP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="structure-container min-h-screen flex flex-col justify-center relative overflow-hidden">
+        <div class="space-y-8 max-w-5xl z-10 pt-20">
+            <p class="font-mono text-accent tracking-widest text-sm uppercase mb-2">Strategy, Identity, & Content</p>
+            <h1 class="text-6xl md:text-8xl font-bold font-sans tracking-tight leading-none">
+                BRAND <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-500 dark:from-white dark:to-gray-500 hover-glitch cursor-default">SYSTEMS</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl font-mono leading-relaxed mt-8 border-l-2 border-accent pl-8">
+                From raw signal to refined structure: Building brand assets in every form.
+            </p>
+            
+            <div class="pt-10">
+                <a href="#portfolio" class="inline-block border border-gray-400 dark:border-gray-600 px-8 py-3 font-mono text-sm hover:bg-accent hover:border-accent hover:text-white transition-all duration-300">
+                    VIEW THE FRAMEWORK &rarr;
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="border-t border-gray-200 dark:border-gray-800">
+        <div class="structure-container section-gap grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- LEFT COLUMN: Title, Image, Desktop Skills -->
+            <div class="lg:col-span-4 space-y-8">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">About Me</h2>
+                    <div class="h-1 w-20 bg-accent mb-8"></div>
+                </div>
+                
+                <!-- DESKTOP IMAGE -->
+                <div class="hidden lg:block relative w-full aspect-[3/4] bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 overflow-hidden">
+                    <img src="images/portrait.jpg" alt="Portrait of William" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+
+                <!-- DESKTOP SKILLS (Proficiency Bars) -->
+                <div class="hidden lg:block pt-4">
+                    <h4 class="font-mono text-xs text-accent uppercase tracking-widest mb-6">Proficiency Index</h4>
+                    
+                    <div class="space-y-6 font-mono text-xs">
+                        <!-- Graphics -->
+                        <div>
+                            <p class="mb-2 text-gray-500 font-bold">GRAPHICS</p>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span class="w-24">Illustrator</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[98%]"></div></div>
+                            </div>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span class="w-24">Photoshop</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[85%]"></div></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="w-24">Figma / Web</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[80%]"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Sound -->
+                        <div>
+                            <p class="mb-2 text-gray-500 font-bold">SOUND</p>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span class="w-24">Ableton Live</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[95%]"></div></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="w-24">Pro Tools</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[85%]"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Motion -->
+                        <div>
+                            <p class="mb-2 text-gray-500 font-bold">MOTION</p>
+                            <div class="flex items-center gap-4 mb-2">
+                                <span class="w-24">After Effects</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[75%]"></div></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="w-24">Premiere Pro</span>
+                                <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[80%]"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHT COLUMN: Narrative Content -->
+            <div class="lg:col-span-8 space-y-16">
+                <!-- Intro -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-accent">Sound, Sight, & Strategy</h3>
+                    <p class="font-mono text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                        I am a highly creative designer and strategist dedicated to building effective, cohesive visual and auditory systems.
+                        My approach to design is rooted in a unique <span class="text-accent">Audio/Visual (A/V) foundation</span> developed through comprehensive study.
+                    </p>
+                </div>
+
+                <!-- Skill Grid -->
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="p-8 border border-gray-200 dark:border-gray-800 hover:border-accent transition-colors bg-white/5 dark:bg-white/5">
+                        <h4 class="font-bold mb-4 font-sans text-xl">Audio Expertise</h4>
+                        <ul class="font-mono text-sm space-y-3 text-gray-500 dark:text-gray-400 list-disc list-inside">
+                            <li>Audio Recording</li>
+                            <li>Sound Design</li>
+                            <li>Post-Production</li>
+                            <li>Mixing & Mastering</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border border-gray-200 dark:border-gray-800 hover:border-accent transition-colors bg-white/5 dark:bg-white/5">
+                        <h4 class="font-bold mb-4 font-sans text-xl">Visual Strategy</h4>
+                        <ul class="font-mono text-sm space-y-3 text-gray-500 dark:text-gray-400 list-disc list-inside">
+                            <li>Graphic Design</li>
+                            <li>Logo & Brand Design</li>
+                            <li>Web Design</li>
+                            <li>UX/UI Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Narrative -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">A Way to Express</h3>
+                        <p class="font-mono text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                            The reason I initially pursued the audio recording program was simple: I wanted to learn how to produce the music I always dreamed of creating. 
+                            This passion led me to actively operate as a vocalist and recording artist, where I now apply my technical expertise in audio recording, mixing, and sound design directly to my original music. This personal practice is the core of the artist persona I am building, keeping my technical skills sharp and allowing me to explore creative boundaries.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">The Visual Expansion</h3>
+                        <p class="font-mono text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                            However, I quickly realized that true artistry requires a command of the entire experience. My journey naturally evolved into the graphical side, driven by the need to expand my artistry into a visual manner as well. This strategic decision allowed me to successfully blend the audio and visual sides of creation.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">The Brand Instinct</h3>
+                        <p class="font-mono text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                            My creative decisions are grounded in a lifelong fascination with market behavior. I constantly analyze <em>why</em> businesses make specific moves. This gives me a practical, "street-smart" understanding of supply and demand, recognizing that design isn't just aesthetic; it is the strategic engine that builds brand equity and creates demand.
+                        </p>
+                    </div>
+
+                    <!-- MOBILE IMAGE -->
+                    <div class="block lg:hidden relative w-full aspect-[3/4] bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 overflow-hidden mt-12">
+                        <img src="images/portrait.jpg" alt="Portrait of William" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+
+                    <!-- MOBILE SKILLS (Duplicate for Mobile Layout) -->
+                    <div class="block lg:hidden pt-8">
+                        <h4 class="font-mono text-xs text-accent uppercase tracking-widest mb-6">Proficiency Index</h4>
+                        
+                        <div class="space-y-6 font-mono text-xs">
+                            <!-- Graphics -->
+                            <div>
+                                <p class="mb-2 text-gray-500 font-bold">GRAPHICS</p>
+                                <div class="flex items-center gap-4 mb-2">
+                                    <span class="w-24">Illustrator</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[98%]"></div></div>
+                                </div>
+                                <div class="flex items-center gap-4 mb-2">
+                                    <span class="w-24">Photoshop</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[85%]"></div></div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="w-24">Figma / Web</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[80%]"></div></div>
+                            </div>
+                        </div>
+
+                            <!-- Sound -->
+                            <div>
+                                <p class="mb-2 text-gray-500 font-bold">SOUND</p>
+                                <div class="flex items-center gap-4 mb-2">
+                                    <span class="w-24">Ableton Live</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[95%]"></div></div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="w-24">Pro Tools</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[85%]"></div></div>
+                                </div>
+                            </div>
+
+                            <!-- Motion -->
+                            <div>
+                                <p class="mb-2 text-gray-500 font-bold">MOTION</p>
+                                <div class="flex items-center gap-4 mb-2">
+                                    <span class="w-24">After Effects</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[75%]"></div></div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="w-24">Premiere Pro</span>
+                                    <div class="flex-1 h-1 bg-gray-300 dark:bg-gray-700"><div class="h-full bg-accent w-[80%]"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-gray-50 dark:bg-gray-900/50">
+        <div class="structure-container section-gap">
+            <h2 class="text-4xl font-bold mb-20 text-center">Portfolio</h2>
+
+            <!-- Case Study 1 -->
+            <div class="mb-32">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-300 dark:border-gray-700 pb-6">
+                    <div>
+                        <span class="font-mono text-accent text-sm tracking-wider">CASE STUDY 01</span>
+                        <h3 class="text-4xl font-bold mt-2">HEAVYEIGHT</h3>
+                    </div>
+                    <div class="flex flex-col items-end mt-4 md:mt-0">
+                        <span class="font-mono text-xs md:text-sm text-gray-500 mb-2">BRANDING / E-COMMERCE / STRATEGY</span>
+                        <a href="https://linktr.ee/heavyeight" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-accent hover:underline flex items-center gap-1">
+                            VISIT LIVE SYSTEM 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Image 1: Identity -->
+                    <div class="aspect-square bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
+                        <img src="images/heavyeight-identity.jpg" alt="Heavyeight Brand Identity" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Core Identity</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 2: Shopify -->
+                    <div class="aspect-square bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
+                        <img src="images/heavyeight-web.jpg" alt="Heavyeight Shopify Store" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Shopify Architecture</span>
+                        </div>
+                    </div>
+
+                    <!-- Image 3: Content -->
+                    <div class="aspect-square bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
+                        <img src="images/heavyeight-social.jpg" alt="Heavyeight Content Strategy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-8 font-mono text-sm text-gray-500 max-w-3xl leading-relaxed">
+                    Demonstrating the ability to build a full brand ecosystem—from physical product design to a digital sales system and educational content strategy.
+                </p>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div>
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-300 dark:border-gray-700 pb-6">
+                    <div>
+                        <span class="font-mono text-accent text-sm tracking-wider">CASE STUDY 02</span>
+                        <h3 class="text-4xl font-bold mt-2">STUDIO RESONANCE</h3>
+                    </div>
+                    <div class="flex flex-col items-end mt-4 md:mt-0">
+                        <span class="font-mono text-xs md:text-sm text-gray-500 mb-2">UX/UI / WEB DESIGN / EDUCATION</span>
+                        <a href="https://resonancemtl.ca/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-accent hover:underline flex items-center gap-1">
+                            VISIT LIVE SYSTEM 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Image 1: Web UX -->
+                    <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
+                        <img src="images/studio-web.jpg" alt="Studio Resonance Website" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Web Architecture & UX</span>
+                        </div>
+                    </div>
+
+                    <!-- Image 2: Educational Content (ZOOMABLE) -->
+                    <!-- Added 'zoomable' class to this specific image -->
+                    <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent cursor-pointer">
+                        <img src="images/studio-content.jpg" alt="Studio Resonance Educational Content" class="zoomable absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                            <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2 flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m4-3H6" /></svg>
+                                CLICK TO INSPECT
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Schematic Roadmap (Horizontal Circuit) -->
+    <section id="timeline" class="border-t border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div class="structure-container section-gap">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl font-bold mb-2">System Roadmap</h2>
+                <p class="font-mono text-xs text-accent uppercase tracking-widest">Architecture Status</p>
+            </div>
+
+            <!-- Horizontal Scroll Container -->
+            <div class="w-full overflow-x-auto pb-12 hide-scrollbar cursor-grab active:cursor-grabbing">
+                <div class="min-w-[1000px] relative px-12 py-8">
+                    
+                    <!-- THE MAIN BUS (Circuit Trace) -->
+                    <div class="absolute top-8 left-0 right-0 h-0.5 bg-gray-300 dark:bg-gray-700"></div>
+
+                    <!-- Power Supply Symbol (Start) -->
+                    <div class="absolute top-8 left-0 -translate-y-1/2 -translate-x-1/2 bg-lightBg dark:bg-darkBg p-2 z-10">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-400 dark:text-gray-500">
+                            <path d="M2 12H6M6 7V17M10 9V15M10 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <!-- Items Flex Container -->
+                    <div class="flex justify-between relative z-10">
+
+                        <!-- ITEM 1: HERO (Completed) -->
+                        <div class="flex flex-col items-center w-32 opacity-50 hover:opacity-80 transition-opacity group">
+                            <!-- Circuit Node (Soldered Point) -->
+                            <div class="w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full border-2 border-lightBg dark:border-darkBg mb-4 relative">
+                                <!-- Vertical Connector Trace -->
+                                <div class="absolute top-3 left-1/2 w-px h-8 bg-gray-300 dark:bg-gray-700 -translate-x-1/2"></div>
+                            </div>
+                            <!-- Text Block -->
+                            <div class="text-center mt-6">
+                                <h4 class="font-bold text-sm line-through">Home Page</h4>
+                                <p class="font-mono text-[10px] line-through text-gray-500">Hero & Nav</p>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 2: ABOUT (Completed) -->
+                        <div class="flex flex-col items-center w-32 opacity-50 hover:opacity-80 transition-opacity group">
+                            <div class="w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full border-2 border-lightBg dark:border-darkBg mb-4 relative">
+                                <div class="absolute top-3 left-1/2 w-px h-8 bg-gray-300 dark:bg-gray-700 -translate-x-1/2"></div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <h4 class="font-bold text-sm line-through">About</h4>
+                                <p class="font-mono text-[10px] line-through text-gray-500">Identity & Skills</p>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 3: PORTFOLIO (Completed) -->
+                        <div class="flex flex-col items-center w-32 opacity-50 hover:opacity-80 transition-opacity group">
+                            <div class="w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full border-2 border-lightBg dark:border-darkBg mb-4 relative">
+                                <div class="absolute top-3 left-1/2 w-px h-8 bg-gray-300 dark:bg-gray-700 -translate-x-1/2"></div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <h4 class="font-bold text-sm line-through">Portfolio</h4>
+                                <p class="font-mono text-[10px] line-through text-gray-500">Case Studies</p>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 4: ROADMAP (Current - ACTIVE LED) -->
+                        <div class="flex flex-col items-center w-32">
+                            <!-- Active LED Node -->
+                            <div class="w-5 h-5 bg-accent rounded-full border-2 border-white dark:border-black mb-4 relative shadow-[0_0_15px_rgba(0,174,239,0.6)]">
+                                <!-- Pulse Animation -->
+                                <div class="absolute inset-0 bg-accent rounded-full animate-ping opacity-75"></div>
+                                <!-- Vertical Connector Trace (Lit) -->
+                                <div class="absolute top-4 left-1/2 w-px h-8 bg-accent/50 -translate-x-1/2"></div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <h4 class="font-bold text-sm text-accent">Architecture</h4>
+                                <p class="font-mono text-[10px] text-accent">Current Phase</p>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 5: SONIC OUTPUT (Future) -->
+                        <div class="flex flex-col items-center w-32 opacity-60">
+                            <!-- Open Node (Hollow) -->
+                            <div class="w-4 h-4 bg-lightBg dark:bg-darkBg rounded-full border-2 border-gray-400 dark:border-gray-600 mb-4 relative">
+                                <div class="absolute top-3 left-1/2 w-px h-8 bg-gray-300 dark:bg-gray-700 -translate-x-1/2"></div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <h4 class="font-bold text-sm">Sonic Output</h4>
+                                <p class="font-mono text-[10px] text-gray-500">Pending</p>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 6: LEGACY (Future) -->
+                        <div class="flex flex-col items-center w-32 opacity-60">
+                            <!-- Open Node (Hollow) -->
+                            <div class="w-4 h-4 bg-lightBg dark:bg-darkBg rounded-full border-2 border-gray-400 dark:border-gray-600 mb-4 relative">
+                                <div class="absolute top-3 left-1/2 w-px h-8 bg-gray-300 dark:bg-gray-700 -translate-x-1/2"></div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <h4 class="font-bold text-sm">Legacy</h4>
+                                <p class="font-mono text-[10px] text-gray-500">Mission Goal</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sonic Output Section (LOCKED & MINIMIZED) -->
+    <section id="sonic-output" class="border-t border-gray-200 dark:border-gray-800 relative h-80 overflow-hidden">
+        
+        <!-- OVERLAY: System Initializing -->
+        <div class="absolute inset-0 z-20 bg-lightBg/80 dark:bg-darkBg/80 backdrop-blur-sm flex flex-col items-center justify-center cursor-not-allowed">
+            <div class="border border-accent px-6 py-2 bg-white/90 dark:bg-black/90 shadow-[0_0_15px_rgba(0,174,239,0.3)]">
+                <p class="font-mono text-xs font-bold text-accent tracking-[0.2em] animate-pulse">SYSTEM INITIALIZING...</p>
+            </div>
+            <p class="font-mono text-[10px] text-gray-500 mt-4 uppercase">Awaiting Deployment</p>
+        </div>
+
+        <!-- BLURRED CONTENT (Clipped by h-80) -->
+        <div class="structure-container py-12 filter blur-sm opacity-50 pointer-events-none">
+            <div class="mb-8 text-center">
+                <h2 class="text-4xl font-bold mb-2">Sonic Output</h2>
+                <p class="font-mono text-xs text-accent uppercase tracking-widest">Original Signals & Frequencies</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="relative border border-gray-300 dark:border-gray-700 bg-white dark:bg-black/20 p-8 overflow-hidden shadow-sm">
+                    <div class="flex justify-between items-end mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+                        <div>
+                            <span class="font-mono text-accent text-xs tracking-widest mb-1 block">LATEST TRANSMISSION</span>
+                            <h3 class="text-2xl font-bold">Audio Log 001</h3>
+                        </div>
+                        <span class="font-mono text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1">VOL. 01</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-8 items-center">
+                        <div class="w-40 h-40 bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 flex items-center justify-center relative overflow-hidden shrink-0">
+                            <div class="absolute inset-0 bg-accent/10"></div>
+                            <span class="font-mono text-[10px] text-gray-400 rotate-45">ARTWORK</span>
+                        </div>
+                        <!-- Content cut off here by container height -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section (LOCKED & MINIMIZED) -->
+    <section id="legacy" class="border-t border-gray-200 dark:border-gray-800 relative h-80 overflow-hidden">
+        
+        <!-- OVERLAY: System Initializing -->
+        <div class="absolute inset-0 z-20 bg-lightBg/80 dark:bg-darkBg/80 backdrop-blur-sm flex flex-col items-center justify-center cursor-not-allowed">
+            <div class="border border-accent px-6 py-2 bg-white/90 dark:bg-black/90 shadow-[0_0_15px_rgba(0,174,239,0.3)]">
+                <p class="font-mono text-xs font-bold text-accent tracking-[0.2em] animate-pulse">SYSTEM INITIALIZING...</p>
+            </div>
+            <p class="font-mono text-[10px] text-gray-500 mt-4 uppercase">Awaiting Deployment</p>
+        </div>
+
+        <!-- BLURRED CONTENT (Clipped) -->
+        <div class="structure-container py-12 relative z-10 filter blur-sm opacity-50 pointer-events-none">
+            <!-- Accent Background Blob -->
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent pointer-events-none"></div>
+
+            <div class="max-w-4xl">
+                <h2 class="text-5xl font-bold mb-10">Legacy: My Purpose</h2>
+                <div class="prose prose-lg font-mono text-base md:text-lg text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
+                    <p class="mb-6">
+                        My work is driven by a mission that extends far beyond design systems and revenue—it is about building a legacy of support for young parents who are fighting to be present in their children's lives.
+                    </p>
+                    <!-- Rest of text clipped by height -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-gray-200 dark:border-gray-800 text-center font-mono text-xs text-gray-500">
+        <div class="structure-container">
+            <p class="mb-6">&copy; 2025 UU Design. All Systems Go.</p>
+            <div class="flex justify-center gap-8">
+                <a href="https://www.instagram.com/uudesign.co/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">Instagram</a>
+                <a href="https://www.linkedin.com/in/williamstosik9421" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">LinkedIn</a>
+                <a href="mailto:williamstosik@icloud.com" class="hover:text-accent transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Blueprint Lightbox Container (Hidden by default) -->
+    <div id="blueprint-modal" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center cursor-zoom-out p-4">
+        <!-- Close Button -->
+        <button id="modal-close" class="absolute top-8 right-8 text-white hover:text-accent font-mono text-xs uppercase tracking-widest border border-white/20 px-4 py-2">
+            Close [ESC]
+        </button>
+        <!-- The Rotated Image -->
+        <!-- UPDATED: Removed Tailwind sizing classes to allow styles.css to control rotation sizing -->
+        <img id="modal-img" class="transition-transform duration-500" alt="Blueprint View">
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* UU Design - Structural Minimalism Styles 
+*/
+
+/* 1. Base Layout & Structure */
+.structure-container {
+    width: 85%; 
+    max-width: 1600px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* 2. Vertical Spacing */
+.section-gap {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* 3. The Canvas (Dynamic Background) */
+#network-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    opacity: 0.4; 
+    pointer-events: none; 
+}
+
+/* 4. Hover Glitch Effect */
+.hover-glitch:hover {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    color: #00AEEF;
+}
+
+/* 5. BLUEPRINT MODAL UTILITIES */
+
+/* Default Modal Image Style (Non-rotated) */
+#modal-img {
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+}
+
+/* Rotated Style (The Fix) */
+.rotate-vertical {
+    transform: rotate(90deg);
+    
+    /* CRITICAL FIX: 
+       When rotated, the image's 'width' becomes the visual height on screen.
+       We must constrain this 'width' to the viewport HEIGHT (vh).
+    */
+    max-width: 85vh !important; 
+    
+    /* The image's 'height' becomes the visual width.
+       We constrain this to the viewport WIDTH (vw).
+    */
+    max-height: 85vw !important;
+    
+    /* Ensure aspect ratio is preserved */
+    width: auto;
+    height: auto;
+}
