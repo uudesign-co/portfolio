@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO & METADATA -->
     <title>UU Design | Branding & Content Creation</title>
-    <meta name="description" content="UU Design is a multidisciplinary studio specializing in Brand Systems, Audio/Visual Design, and Creative Direction.">
-    <meta name="keywords" content="Brand Design, Audio Recording, Creative Direction, Graphic Design, Web Design, UX/UI, System Design, Sound Design, Branding Strategy">
+    <meta name="description" content="Strategy, Identity, & Content. UU Design is a multidisciplinary studio specializing in Branding, Visual Systems, and Content Creation.">
+    <meta name="keywords" content="Branding, Content Creation, Creative Direction, Brand Identity, Graphic Design, Web Design, System Design, Audio Visual">
     <meta name="author" content="William | UU Design">
     <meta name="robots" content="index, follow">
 
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="images/logo.png">
     
-    <!-- Open Graph / Socials -->
+    <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uudesign.co/">
     <meta property="og:title" content="UU Design | Branding & Content Creation">
-    <meta property="og:description" content="Bridging the gap between auditory signal, visual structure, and business strategy.">
+    <meta property="og:description" content="Strategy, Identity, & Content">
     <meta property="og:image" content="images/og-preview.jpg"> 
+
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://uudesign.co/">
     <meta property="twitter:title" content="UU Design | Branding & Content Creation">
-    <meta property="twitter:description" content="Bridging the gap between auditory signal, visual structure, and business strategy.">
+    <meta property="twitter:description" content="Strategy, Identity, & Content">
     <meta property="twitter:image" content="images/og-preview.jpg">
 
-    <!-- Fonts & CSS -->
+    <!-- FONTS & STYLES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Space_Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,13 +47,15 @@
                         lightText: '#1E1E1E',
                         darkBg: '#121212',
                         darkText: '#F0F0F0',
-                        accent: '#00AEEF',
+                        accent: '#00AEEF', // Electric Cyan
                     },
                     fontFamily: {
                         sans: ['Outfit', 'sans-serif'],
                         mono: ['Space Mono', 'monospace'],
                     },
-                    animation: { 'glitch': 'glitch 1s linear infinite' },
+                    animation: {
+                        'glitch': 'glitch 1s linear infinite',
+                    },
                     keyframes: {
                         glitch: {
                             '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
@@ -73,7 +81,7 @@
                 <img src="images/logo.png" alt="UU Design Logo" class="h-8 w-auto dark:invert">
             </a>
             
-            <!-- Desktop Menu (Updated Order) -->
+            <!-- Desktop Menu -->
             <div class="hidden md:flex gap-8 font-mono text-sm">
                 <a href="#portfolio" class="hover:text-accent transition-colors">PORTFOLIO</a>
                 <a href="about.html" class="hover:text-accent transition-colors">ABOUT</a>
@@ -97,13 +105,19 @@
                 <a href="about.html" class="mobile-link hover:text-accent transition-colors">ABOUT</a>
             </div>
             
+            <!-- Mobile Footer Info -->
             <div class="absolute bottom-24 text-center w-full">
                 <p class="font-mono text-xs text-gray-500 mb-4">SYSTEM STATUS: ONLINE</p>
-                <!-- Social Links -->
                 <div class="flex gap-8 justify-center">
-                   <a href="https://www.instagram.com/uudesign.co/" target="_blank" class="text-gray-400 hover:text-accent">Instagram</a>
-                   <a href="https://www.linkedin.com/in/williamstosik9421" target="_blank" class="text-gray-400 hover:text-accent">LinkedIn</a>
-                   <a href="mailto:williamstosik@icloud.com" class="text-gray-400 hover:text-accent">Email</a>
+                    <a href="https://www.instagram.com/uudesign.co/" target="_blank" class="text-gray-400 hover:text-accent">
+                        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/williamstosik9421" target="_blank" class="text-gray-400 hover:text-accent">
+                        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:williamstosik@icloud.com" class="text-gray-400 hover:text-accent">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -122,7 +136,6 @@
             </p>
             
             <div class="pt-10">
-                <!-- UPDATED BUTTON: Contact / Start Project -->
                 <a href="mailto:williamstosik@icloud.com" class="inline-block border border-gray-400 dark:border-gray-600 px-8 py-3 font-mono text-sm hover:bg-accent hover:border-accent hover:text-white transition-all duration-300">
                     START A PROJECT &rarr;
                 </a>
@@ -152,21 +165,23 @@
                 </div>
                 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Identity -->
+                    <!-- Image 1: Identity -->
                     <div class="aspect-square bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
                         <img src="images/heavyeight-identity.jpg" alt="Heavyeight Brand Identity" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Core Identity</span>
                         </div>
                     </div>
-                    <!-- Shopify -->
+                    
+                    <!-- Image 2: Shopify -->
                     <div class="aspect-square bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
                         <img src="images/heavyeight-web.jpg" alt="Heavyeight Shopify Store" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span class="font-mono text-xs tracking-widest uppercase text-white border border-white px-4 py-2">Shopify Architecture</span>
                         </div>
                     </div>
-                    <!-- Content -->
+
+                    <!-- Image 3: Content -->
                     <div class="aspect-square bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent">
                         <img src="images/heavyeight-social.jpg" alt="Heavyeight Content Strategy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -196,7 +211,7 @@
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Web UX (Standard Landscape Zoom) -->
+                    <!-- Image 1: Web UX -->
                     <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent cursor-pointer">
                         <img src="images/studio-web.jpg" alt="Studio Resonance Website" class="zoomable absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -206,7 +221,7 @@
                             </span>
                         </div>
                     </div>
-                    <!-- Educational Content (Vertical Schematic - NEEDS ROTATION) -->
+                    <!-- Image 2: Educational Content (ZOOMABLE) -->
                     <div class="aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 relative overflow-hidden group transition-all hover:border-accent cursor-pointer">
                         <!-- Added 'needs-rotation' class here -->
                         <img src="images/studio-content.jpg" alt="Studio Resonance Educational Content" class="zoomable needs-rotation absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -238,9 +253,14 @@
         </div>
     </footer>
 
-    <!-- Blueprint Modal -->
+    <!-- Blueprint Lightbox Container (Hidden by default) -->
     <div id="blueprint-modal" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center cursor-zoom-out p-4">
-        <button id="modal-close" class="absolute top-8 right-8 text-white hover:text-accent font-mono text-xs uppercase tracking-widest border border-white/20 px-4 py-2">Close [ESC]</button>
+        <!-- Close Button -->
+        <button id="modal-close" class="absolute top-8 right-8 text-white hover:text-accent font-mono text-xs uppercase tracking-widest border border-white/20 px-4 py-2">
+            Close [ESC]
+        </button>
+        <!-- The Rotated Image -->
+        <!-- UPDATED: Removed Tailwind sizing classes to allow styles.css to control rotation sizing -->
         <img id="modal-img" class="transition-transform duration-500" alt="Blueprint View">
     </div>
 
