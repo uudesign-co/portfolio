@@ -147,7 +147,14 @@ if (triggers.length > 0) {
     triggers.forEach(img => {
         img.addEventListener('click', () => {
             modalImg.src = img.src;
-            modalImg.classList.add('rotate-vertical');
+            
+            // CHECK IF ROTATION IS NEEDED
+            if (img.classList.contains('needs-rotation')) {
+                modalImg.classList.add('rotate-vertical');
+            } else {
+                modalImg.classList.remove('rotate-vertical');
+            }
+
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         });
@@ -157,6 +164,8 @@ if (triggers.length > 0) {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
         modalImg.src = '';
+        // Reset rotation class to be safe
+        modalImg.classList.remove('rotate-vertical');
     };
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
