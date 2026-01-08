@@ -148,6 +148,163 @@
         <div class="structure-container section-gap">
             <h2 class="text-4xl font-bold mb-20 text-center">Portfolio</h2>
 
+            <!-- 1. VISUAL SIGNALS (Identity Index) -->
+            <div class="mb-32">
+                <div class="border-b border-gray-300 dark:border-gray-700 pb-4 mb-8">
+                    <!-- UPDATED TITLE & SUBTITLE -->
+                    <h3 class="text-xl font-bold font-sans tracking-wide">LOGOMARKS</h3>
+                    <p class="font-mono text-xs text-gray-500 mt-1">CORE IDENTITY SYSTEMS</p>
+                </div>
+
+                <!-- Scrollable Container for Mobile -->
+                <!-- UPDATED: Changed grid-cols-5 to grid-cols-4 to center the 4 logos -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    
+                    <!-- Logo 1: MOVO -->
+                    <div class="group">
+                        <div class="aspect-square bg-white dark:bg-black/40 border border-gray-200 dark:border-gray-800 flex items-center justify-center p-8 transition-colors hover:border-accent">
+                            <img src="images/logo-movo.png" alt="MOVO" class="w-full h-auto dark:invert opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <span class="font-mono text-[10px] text-gray-400 border border-gray-200 dark:border-gray-800 px-2 py-1 rounded-full uppercase">KINETIC</span>
+                        </div>
+                    </div>
+
+                    <!-- Logo 2: BSTIKS -->
+                    <div class="group">
+                        <div class="aspect-square bg-white dark:bg-black/40 border border-gray-200 dark:border-gray-800 flex items-center justify-center p-8 transition-colors hover:border-accent">
+                            <img src="images/logo-bstiks.png" alt="BSTIKS" class="w-full h-auto dark:invert opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <span class="font-mono text-[10px] text-gray-400 border border-gray-200 dark:border-gray-800 px-2 py-1 rounded-full uppercase">SONIC</span>
+                        </div>
+                    </div>
+
+                    <!-- Logo 3: PHREQOENXI -->
+                    <div class="group">
+                        <div class="aspect-square bg-white dark:bg-black/40 border border-gray-200 dark:border-gray-800 flex items-center justify-center p-8 transition-colors hover:border-accent">
+                            <img src="images/logo-phreqoenxi.png" alt="PHREQOENXI" class="w-full h-auto dark:invert opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <span class="font-mono text-[10px] text-gray-400 border border-gray-200 dark:border-gray-800 px-2 py-1 rounded-full uppercase">FREQUENCY</span>
+                        </div>
+                    </div>
+
+                    <!-- Logo 4: RESONANCE -->
+                    <div class="group">
+                        <div class="aspect-square bg-white dark:bg-black/40 border border-gray-200 dark:border-gray-800 flex items-center justify-center p-8 transition-colors hover:border-accent">
+                            <img src="images/logo-resonance.png" alt="RESONANCE" class="w-full h-auto dark:invert opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <span class="font-mono text-[10px] text-gray-400 border border-gray-200 dark:border-gray-800 px-2 py-1 rounded-full uppercase">ACOUSTIC</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 2. CONTENT STREAMS (Reels) -->
+            <div class="mb-32">
+                <div class="border-b border-gray-300 dark:border-gray-700 pb-4 mb-8 flex justify-between items-end">
+                    <div>
+                        <!-- UPDATED TITLE -->
+                        <h3 class="text-xl font-bold font-sans tracking-wide">VIDEO & REELS</h3>
+                        <!-- UPDATED SUBTITLE -->
+                        <p class="font-mono text-xs text-gray-500 mt-1">9:16 ASPECT RATIO</p>
+                    </div>
+                    <a href="https://www.instagram.com/uudesign.co/" target="_blank" class="font-mono text-xs text-accent hover:underline">VIEW ALL &rarr;</a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Reel 1: Fitness (MOVO) -->
+                    <div class="flex flex-col gap-3">
+                        <!-- NEW HEADER LABEL -->
+                        <div class="flex justify-between items-end px-1">
+                            <span class="font-bold font-sans text-sm">FITNESS</span>
+                            <span class="font-mono text-[10px] text-gray-400">INSTRUCTION</span>
+                        </div>
+                        
+                        <div class="bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-gray-800 relative overflow-hidden rounded-xl w-full aspect-[9/16]">
+                            <video 
+                                class="w-full h-full object-cover" 
+                                controls 
+                                muted 
+                                playsinline
+                                preload="metadata"
+                                poster="images/movo-cover.jpg">
+                                <source src="videos/movo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="font-mono text-[10px] text-gray-400 border-l-2 border-gray-300 dark:border-gray-700 pl-3">
+                            <span class="text-accent uppercase font-bold block mb-1">VISUAL SEQUENCE ONLY</span>
+                            Audio track omitted for cross-platform copyright compliance.
+                        </div>
+                    </div>
+
+                    <!-- Reel 2: Sonic (BSTIKS) -->
+                    <div class="flex flex-col gap-3">
+                        <!-- NEW HEADER LABEL -->
+                        <div class="flex justify-between items-end px-1">
+                            <span class="font-bold font-sans text-sm">ENTERTAINMENT</span>
+                            <span class="font-mono text-[10px] text-gray-400">PERFORMANCE</span>
+                        </div>
+
+                        <div class="bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-gray-800 relative overflow-hidden rounded-xl w-full aspect-[9/16]">
+                            <video 
+                                class="w-full h-full object-cover" 
+                                controls 
+                                playsinline
+                                preload="metadata"
+                                poster="images/bstiks-cover.jpg">
+                                <source src="videos/bstiks.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="font-mono text-[10px] text-gray-400 border-l-2 border-accent pl-3">
+                            <span class="text-accent uppercase font-bold block mb-1">AUDIO SIGNAL: LICENSED</span>
+                            Production: Waytoolost.<br>Commercial rights secured.
+                        </div>
+                    </div>
+
+                    <!-- Reel 3: Product (HEAVYEIGHT) -->
+                    <div class="flex flex-col gap-3">
+                        <!-- NEW HEADER LABEL -->
+                        <div class="flex justify-between items-end px-1">
+                            <span class="font-bold font-sans text-sm">EDUCATION</span>
+                            <span class="font-mono text-[10px] text-gray-400">LIFESTYLE</span>
+                        </div>
+
+                        <div class="bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-gray-800 relative overflow-hidden rounded-xl w-full aspect-[9/16]">
+                            <video 
+                                class="w-full h-full object-cover" 
+                                controls 
+                                muted
+                                playsinline
+                                preload="metadata"
+                                poster="images/heavyeight-cover.jpg">
+                                <source src="videos/heavyeight.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="font-mono text-[10px] text-gray-400 border-l-2 border-gray-300 dark:border-gray-700 pl-3">
+                            <span class="text-accent uppercase font-bold block mb-1">VISUAL SEQUENCE ONLY</span>
+                            Audio track omitted for cross-platform copyright compliance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. SYSTEM CASE STUDIES (Deep Dives) -->
+            <div class="mb-12">
+                <div class="border-b border-gray-300 dark:border-gray-700 pb-4 mb-12">
+                    <!-- UPDATED TITLE & SUBTITLE -->
+                    <h3 class="text-xl font-bold font-sans tracking-wide">BRANDING SYSTEMS</h3>
+                    <p class="font-mono text-xs text-gray-500 mt-1">FULL-CYCLE CASE STUDIES</p>
+                </div>
+            </div>
+
             <!-- Case Study 1 -->
             <div class="mb-32">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-300 dark:border-gray-700 pb-6">
@@ -260,7 +417,6 @@
             Close [ESC]
         </button>
         <!-- The Rotated Image -->
-        <!-- UPDATED: Removed Tailwind sizing classes to allow styles.css to control rotation sizing -->
         <img id="modal-img" class="transition-transform duration-500" alt="Blueprint View">
     </div>
 
